@@ -53,16 +53,15 @@ class LocalNotificationServices {
             actionType: ActionType.Default,
             category: NotificationCategory.Reminder,
             wakeUpScreen: true,
-            autoDismissible: false,
           ),
           schedule: NotificationCalendar(
-            allowWhileIdle: true,
-            preciseAlarm: true,
-            hour: message.hour,
-            minute: message.minute,
-            day: message.day,
-            month: message.month,
-            year: message.year,
+            // allowWhileIdle: true,   // Ensures notification works even when the app is idle
+            preciseAlarm: true,     // Ensures the alarm is triggered exactly at the specified time
+            hour: message.hour,     // Notification hour
+            minute: message.minute, // Notification minute
+            // day: message.day,
+            // month: message.month,
+            // year: message.year,
             timeZone: localTimeZone,
             repeats: message.repeats,
           ));
